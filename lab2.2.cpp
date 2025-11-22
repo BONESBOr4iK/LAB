@@ -6,8 +6,9 @@
 
 struct Calculator
 {
+    я очивку хочу
 
-    std::string name;
+        std::string name;
     double cost;
     int number;
     std::string colour;
