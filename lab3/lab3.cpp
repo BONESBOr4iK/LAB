@@ -41,8 +41,27 @@ int main()
     file_rar.seekg(0, std::ios::beg);
     std::vector<char> rar_data(filesize, 0);
     file_rar.read(rar_data.data(), filesize);
-    Rar_head *p_header = reinterpret_cast<Rar_head *>(&rar_data[7]);
-    std::cout << "Header type: 0x" << std::hex << int(p_header->header_type) << std::endl;
-    std::cout << "Header size: " << std::dec << int(p_header->header_size) << std::endl;
+    int current_pos = 7;
+    while (current_pos < filesize)
+    {
+        Rar_head *p_header = reinterpret_cast<Rar_head *>(&rar_data[current_pos]);
+        // std::cout << "Блок: " << current_pos << std::endl;
+        // std::cout << "Тип 0x" << std::hex << int(p_header->header_type) << std::endl;
+        // std::cout << "размер: " << std::dec << int(p_header->header_type) << std::endl;
+
+        if (p_header->header_type == 0x74)
+        {
+            File_head *f_header = reinterpret_cast<File_head *>(&rar_data[current_pos + 7]);
+            char *file_name = &rar_data[current_pos + 32];
+            std::string filename(file_name, f_header->NameSize);
+
+            std::cout << "Название файла: " << filename << std::endl;
+            std::cout << "Размер: " << std::dec << f_header->PackSize << " Байт" << std::endl;
+            current_pos += p_header->header_size + f_header->PackSize;
+        }
+        else
+            current_pos += p_header->header_size;
+    }
+
     return 0;
 }
