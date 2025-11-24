@@ -1,4 +1,0 @@
-Casio_FX560 6.70 5600 Blue
-Casio_F77 15.99 1274 Red
-Casio_S326 19.99 8623 Yellow
-Casio_X32 20.0 4268 Orange
