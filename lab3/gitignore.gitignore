@@ -1,0 +1,84 @@
+# ==================== #
+#   CMake сборка       #
+# ==================== #
+
+# Папка сборки (самая важная строка!)
+build/
+*/build/
+
+# Файлы CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Мульти-конфигурационные сборки (Visual Studio, Xcode)
+*.sln
+*.vcxproj*
+*.vcxproj.filters
+*.vcxproj.user
+*.proj
+*.props
+*.xml
+*.tlog
+*.log
+x64/
+x86/
+Win32/
+Debug/
+Release/
+*.dir/
+*.vcxproj.*.tmp
+
+# ==================== #
+#   Скомпилированные файлы #
+# ==================== #
+
+# Исполняемые файлы
+*.exe
+*.out
+*.app
+
+# Объектные файлы
+*.o
+*.obj
+*.ko
+
+# Библиотеки
+*.a
+*.lib
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Отладочная информация
+*.dwo
+*.dwp
+*.pdb
+*.idb
+*.ilk
+
+# Прекомпилированные заголовки
+*.gch
+*.pch
+
+# ==================== #
+#   Системные файлы    #
+# ==================== #
+
+# Резервные копии
+*~
+*.bak
+*.backup
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
