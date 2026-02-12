@@ -12,6 +12,8 @@ CMakeFiles/
 cmake_install.cmake
 Makefile
 *.cmake
+*.json
+*.exe
 
 # Мульти-конфигурационные сборки (Visual Studio, Xcode)
 *.sln
